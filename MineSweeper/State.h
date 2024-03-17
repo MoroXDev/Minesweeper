@@ -5,6 +5,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <memory>
+#include <cstdlib>
 using std::string;
 
 struct Data

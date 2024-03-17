@@ -9,7 +9,6 @@ Cell::Cell(sf::RectangleShape& shape, sf::RenderWindow& window) : window(window)
 	this->shape.setOutlineColor(shape.getOutlineColor());
 	this->shape.setOutlineThickness(shape.getOutlineThickness());
 	this->shape.setScale(shape.getScale());
-	std::cout << "wieksze gowno\n";
 }
 
 Cell::~Cell()
@@ -38,4 +37,11 @@ sf::RectangleShape& Cell::getShape()
 void Cell::render()
 {
 	this->window.draw(this->shape);
+}
+
+int Cell::getVariant()
+{
+	if (this->variant.at("isBlank") == true) { return 1; }
+	else if (this->variant.at("isNumber") == true) { return 2; }
+	else if (this->variant.at("isBomb") == true) { return 3; }
 }
