@@ -1,10 +1,11 @@
 #ifndef GAMEPLAY_H
 #define GAMEPLAY_H
 #include "State.h"
+#include "Cell.h"
 class Gameplay : public State
 {
 private:
-	std::unique_ptr<std::vector<sf::RectangleShape>> cells;
+	std::vector<Cell> cells;
 	bool statesRemoved = false;
 
 	void removeStates();

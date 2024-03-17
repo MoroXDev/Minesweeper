@@ -17,7 +17,6 @@ void Gameplay::setView()
 void Gameplay::initGrid(unsigned int cellsMultiplier)
 {
 	cellsMultiplier = 50;
-	this->cells = std::make_unique<std::vector<sf::RectangleShape>>();
 	float outlineThickness = 1080 * 100 / this->data.window->getSize().x / cellsMultiplier;
 	if (outlineThickness < 1) { outlineThickness = 1; }
 
@@ -37,22 +36,23 @@ void Gameplay::initGrid(unsigned int cellsMultiplier)
 			shape.setOutlineThickness(outlineThickness);
 			shape.setOutlineColor(sf::Color::Black);
 
-			this->cells->push_back(shape);
+			this->cells.push_back(Cell(shape, *this->data.window));
 
 			if (cellPos.x < firstCellPos.x + shape.getGlobalBounds().width * (cellsMultiplier - 1))
 			{
 				cellPos.x += shape.getGlobalBounds().width;
 			}
 			else { cellPos.x = firstCellPos.x; cellPos.y += shape.getGlobalBounds().height; }
+			std::cout << "gowno\n";
 		}
 	}
 }
 
 void Gameplay::initBombs(unsigned int bombsNumber)
 {
-	if (bombsNumber > this->cells->size())
+	if (bombsNumber > this->cells.size())
 	{
-		bombsNumber = this->cells->size();
+		bombsNumber = this->cells.size();
 	}
 
 }
@@ -81,7 +81,7 @@ void Gameplay::update()
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) { this->data.gameView.move(1, 0); }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)) { this->data.gameView.move(0, -1); }
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::S)) { this->data.gameView.move(0, 1); }
-	std::cout << cells->size() << "\n";
+	std::cout << cells.size() << "\n";
 }
 
 void Gameplay::render()
@@ -91,8 +91,8 @@ void Gameplay::render()
 	//this->data.window->draw(it);
 	//}
 
-	for (int i = 0; i < this->cells->size(); i++)
+	for (int i = 0; i < this->cells.size(); i++)
 	{
-		this->data.window->draw(this->cells->at(i));
+		this->cells.at(i).render();
 	}
 }
