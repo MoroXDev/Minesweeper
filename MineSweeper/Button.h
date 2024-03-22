@@ -26,7 +26,6 @@ public:
 	bool isIdle();
 	sf::RectangleShape& getShape();
 	sf::Text& getText();
-
 	void update(sf::Vector2f& mousePosWindow, std::map<string, bool>& mouseButtonReleased);
 	void render(sf::RenderWindow& window);
 };

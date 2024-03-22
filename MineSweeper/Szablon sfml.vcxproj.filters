@@ -47,6 +47,9 @@
     <ClCompile Include="Cell.cpp">
       <Filter>Main</Filter>
     </ClCompile>
+    <ClCompile Include="End.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -64,6 +67,7 @@
     <ClInclude Include="Gameplay.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Cell.h" />
+    <ClInclude Include="End.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Resource.rc">

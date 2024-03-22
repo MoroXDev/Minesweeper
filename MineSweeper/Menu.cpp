@@ -11,7 +11,7 @@ void Menu::initTextures()
 {
 	this->backgroundTexture->loadFromFile("Assets/Backgrounds/background.png");
 	this->bombTexture->loadFromFile("Assets/Menu/Textures/bomb.png");
-	this->pixelFont->loadFromFile("Assets/Menu/Fonts/pixelFont.ttf");
+	this->pixelFont->loadFromFile("Assets/Fonts/pixelFont.ttf");
 }
 
 void Menu::initSprites()
@@ -38,7 +38,7 @@ void Menu::initSprites()
 
 void Menu::updateButtons()
 {
-	if (this->play->isPressed()) { this->states.push_back(std::make_unique<Gameplay>(this->data, this->states, 30, 10*10)); }
+	if (this->play->isPressed()) { this->states.push_back(std::make_unique<Gameplay>(this->data, this->states, 40, 10*10)); }
 	else if (this->play->isActive()) { this->play->getShape().setFillColor(sf::Color(112, 255, 188)); }
 	else if (this->play->isIdle()) { this->play->getShape().setFillColor(sf::Color::White); }
 }

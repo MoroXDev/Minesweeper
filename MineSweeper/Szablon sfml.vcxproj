@@ -144,6 +144,7 @@
     <ClCompile Include="Cell.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Gameplay.cpp" />
+    <ClCompile Include="End.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="State.cpp" />
@@ -153,6 +154,7 @@
     <ClInclude Include="Cell.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="Gameplay.h" />
+    <ClInclude Include="End.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="State.h" />
